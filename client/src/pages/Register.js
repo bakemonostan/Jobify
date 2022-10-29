@@ -1,5 +1,5 @@
 // states
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // Assests
 import { Logo, FormRow, Alert } from '../components';
@@ -17,7 +17,7 @@ const Register = () => {
   const [values, setValues] = useState(initialState);
   // * Global state and useNavigate
 
-  const { isLoading, showAlert, displayAlert } = useAppContext();
+  const { showAlert, displayAlert } = useAppContext();
 
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
