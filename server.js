@@ -4,11 +4,13 @@ const app = express();
 
 //middleware
 import notFoundMiddleware from './middleware/not-found.js';
+import errorHandlerMiddleware from './middleware/error-handler.js';
 
 app.get('/', (req, res) => {
   res.send('Welcome');
 });
 
+app.use(errorHandlerMiddleware);
 app.use(notFoundMiddleware);
 
 // declare port variable
