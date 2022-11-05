@@ -23,8 +23,16 @@ app.get('/', (req, res) => {
   res.send('Welcome');
 });
 
-app.use('api/v1/auth', authRouter);
-app.use('api/v1/jobs', jobsRouter);
+app.get('/api/v1/auth', (req, res) => {
+  res.send('Welcome Again');
+});
+
+app.get('/api/v1/auth/register', (req, res) => {
+  res.send('Welcome to get');
+});
+
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/jobs', jobsRouter);
 
 app.use(errorHandlerMiddleware);
 app.use(notFoundMiddleware);
